@@ -7,5 +7,5 @@ public class Button {
 
     public void setCommand(Command command) {this.command = command; }
 
-    public void pressed(){command.execute();}
+    public void pressed(int pINumber){ command.execute(pINumber);}
 }

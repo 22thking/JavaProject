@@ -8,7 +8,7 @@ public class DBGetDataOnCommand implements Command {
     }
 
     @Override
-    public void execute() {
+    public void execute(int pINumber) {
         dbGetData.getData();
     }
 }

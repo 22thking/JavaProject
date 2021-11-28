@@ -8,7 +8,7 @@ public class DBPostDataOnCommand implements Command {
     }
 
     @Override
-    public void execute() {
-        dbPostData.postData();
+    public void execute(int pINumber) {
+        dbPostData.postData(pINumber);
     }
 }

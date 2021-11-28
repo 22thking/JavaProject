@@ -1,6 +1,47 @@
+package source;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Input {
+
+    int filteringSelectInput(int min, int max) {
+        int inputSelect = 0;
+        while (true) {
+            inputSelect = (int) filteringInput(inputSelect);
+
+            if (!(inputSelect >= min && inputSelect <= max)){
+                System.out.println(min + " 에서 " + max + " 사이값을 입력하세요.");
+                continue;
+            }
+            break;
+        }
+        return inputSelect;
+    }
+    private double filteringSelectInput(double min, double max) {
+        double inputSelect = 0.0;
+        while (true) {
+            System.out.println(min + " 에서 " + max + " 사이값을 입력하세요.");
+            inputSelect = (double) filteringInput(inputSelect);
+
+            if (!(inputSelect >= min && inputSelect <= max)) {
+                continue;
+            }
+            break;
+        }
+        return inputSelect;
+    }
+    public void hashMapInput(HashMap<String, HashMap<String, Double>> data){
+
+        for (String key:data.keySet()){
+             for (Map.Entry<String, Double> j :data.get(key).entrySet()){
+                 System.out.println(j.getKey() + " 데이터 입력");
+                 Double input = filteringSelectInput(0.0,1000.0);
+                 j.setValue(input);
+             }
+        }
+    }
 
     public Object filteringInput(Object input){
         Scanner scanner = new Scanner(System.in);
