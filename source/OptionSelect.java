@@ -12,7 +12,7 @@ public class OptionSelect{ //사용자가 선택할 수 있는 선택지 클래�
     private Output output = new Output();
     private HashData hashData = new HashData();
 
-    public void callOption(){
+    public boolean callOption(){
 
         DBGetData dbGetData = new DBGetData();
         Command dBGetDataOnCommand = new DBGetDataOnCommand(dbGetData);
@@ -29,14 +29,16 @@ public class OptionSelect{ //사용자가 선택할 수 있는 선택지 클래�
                 button2.pressed(0);
                 break;
             case 2:
-                int pINumber = input.filteringSelectInput(0,1000);
+                System.out.println("PINumber 를 입력하세요. (1000 ~2000)");
+                int pINumber = input.filteringSelectInput(1000,2000);
                 button1.pressed(pINumber);
                 break;
             case 3:
-                break;
+                return false;
             default:
                 throw new IllegalStateException("Unexpected value: " + getNumber);
         }
+        return true;
     }
 
     public HashMap<String, HashMap<String, Double>> callCheckUp(){

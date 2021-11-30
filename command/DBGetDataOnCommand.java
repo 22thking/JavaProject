@@ -1,5 +1,7 @@
 package command;
 
+import singletonDB.SingletonPIDB;
+
 public class DBGetDataOnCommand implements Command {
     private final DBGetData dbGetData;
 
@@ -9,6 +11,6 @@ public class DBGetDataOnCommand implements Command {
 
     @Override
     public void execute(int pINumber) {
-        dbGetData.getData();
+        dbGetData.getData(pINumber);
     }
 }

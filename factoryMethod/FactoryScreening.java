@@ -6,8 +6,8 @@ public class FactoryScreening {
 
         MedicalCheckUp medicalCheckUp = null;
         if (sMedicalCheckUp.equals("SimpleCheckUp")) medicalCheckUp = new SimpleCheckUp();
-        else if (sMedicalCheckUp.equals("HighCheckUp")) medicalCheckUp = new HighCheckUp();
-        else if (sMedicalCheckUp.equals("AnotherCheckUp")) medicalCheckUp = new AnotherCheckUp();
+        else if (sMedicalCheckUp.equals("HighCheckUp")) medicalCheckUp = new PlusCheckUp();
+        else if (sMedicalCheckUp.equals("AnotherCheckUp")) medicalCheckUp = new AllPlusCheckUp();
         return medicalCheckUp;
     }
 }

@@ -36,7 +36,7 @@ public class Input {
 
         for (String key:data.keySet()){
              for (Map.Entry<String, Double> j :data.get(key).entrySet()){
-                 System.out.println(j.getKey() + " 데이터 입력");
+                 System.out.println("\n"+j.getKey() + " 데이터 입력");
                  Double input = filteringSelectInput(0.0,1000.0);
                  j.setValue(input);
              }
@@ -50,19 +50,19 @@ public class Input {
             try{
                 switch (check){
                     case "java.lang.Integer":
-                        System.out.println("정수를 입력하세요");
+                        //System.out.println("정수를 입력하세요");
                         input = scanner.nextInt();
                         break;
                     case "java.lang.Double":
-                        System.out.println("실수를 입력하세요");
+                        //System.out.println("실수를 입력하세요");
                         input = scanner.nextDouble();
                         break;
                     case "java.lang.String":
-                        System.out.println("문자열을 입력하세요");
+                        //System.out.println("문자열을 입력하세요");
                         input = scanner.nextLine();
                         break;
                     case "java.lang.Character":
-                        System.out.println("문자를 입력하세요");
+                        //System.out.println("문자를 입력하세요");
                         input = scanner.nextLine();
                         if(((String) input).length()>1){
                             throw new Exception();
